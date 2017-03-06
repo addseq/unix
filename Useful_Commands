@@ -1,0 +1,58 @@
+# Useful resources
+http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner
+
+# System environment info
+env | more
+
+# Linux distribution
+sysinfo
+
+# Running kernel
+uname -r
+
+# CPU specs
+cat /proc/cpuinfo
+
+# Memory Info
+cat /proc/meminfo
+free /proc/meminfo
+
+# Running kernal and compiler installed
+cat /proc/version
+
+# Installed PCI cards
+cat /proc/pci
+
+# Tar/Untar a file
+tar -cvf tarredir.tar dir
+tar -xvf tarreddir.tar
+
+# Grep for stringpattern and print 3 lines after it
+grep -A 3 -i "stringpatterntogrep" foo.txt
+
+# Look for string pattern match across all txt/csv files in multiple directories on the current level
+# E.g. Scans foo, bar files in dir1 and baz, qux files in dir2 for pattern match
+# -- /dir1
+#       |- foo.csv
+#       |- bar.csv
+# -- /dir2
+#       |- baz.csv
+#       |- qux.csv
+grep "StringPatternToLookFor" $(find -name "*.csv")
+
+# Check size of all folders on current level one level deep
+du -sh ./*
+du | less
+
+# Find empty files in home directory
+find ~ -empty
+
+# Extract range of lines, for example lines 3-10 from a file
+sed -n '3,10p' foo.txt
+
+# Remove duplicate lines in a file
+awk '!($0 in array) { array[$0]; print }' foo.txt
+
+# Print specific columns only in a file
+awk '{print $5,$12;}' employee.txt
+
