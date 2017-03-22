@@ -54,5 +54,7 @@ sed -n '3,10p' foo.txt
 awk '!($0 in array) { array[$0]; print }' foo.txt
 
 # Print specific columns only in a file
-awk '{print $5,$12;}' employee.txt
+awk '{print $5,$12;}' bar.txt
 
+# Prefix each row of a file with characters
+sed -e 's/^/prefixChars/' foo.txt > newfoo.txt
