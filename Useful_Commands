@@ -58,3 +58,6 @@ awk '{print $5,$12;}' bar.txt
 
 # Prefix each row of a file with characters
 sed -e 's/^/prefixChars/' foo.txt > newfoo.txt
+
+# Line Count of all Files in nested directories following .csv file pattern
+find . -name '*.csv' | xargs wc -l
